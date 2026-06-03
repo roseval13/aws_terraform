@@ -1,0 +1,167 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Times New Roman", Georgia, serif;
+    background: white;
+    color: #111;
+    line-height: 1.25;
+    padding: 30px;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    background: white;
+    padding: 0;
+}
+
+
+h1 {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+    color: #000;
+}
+
+
+.contact {
+    text-align: center;
+    font-size: 1rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+
+h2 {
+    font-size: 1.8rem;
+    font-weight: normal;
+    text-transform: uppercase;
+    border-bottom: 1px solid #666;
+    padding-bottom: 2px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: #000;
+}
+
+
+h3 {
+    font-size: 1.15rem;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 2px;
+    color: #000;
+}
+
+.company,
+.dates {
+    font-size: 1rem;
+    color: #222;
+    margin-bottom: 2px;
+}
+
+p {
+    margin-bottom: 4px;
+}
+
+
+ul {
+    padding-left: 20px;
+    margin-bottom: 8px;
+}
+
+li {
+    margin-bottom: 2px;
+}
+
+
+.project {
+    margin-bottom: 12px;
+    padding: 0;
+    background: none;
+    border: none;
+}
+
+
+.skills {
+    display: block;
+}
+
+.skill {
+    display: inline;
+    background: none;
+    border: none;
+    color: #000;
+    padding: 0;
+    border-radius: 0;
+    margin-right: 6px;
+}
+
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.profile-pic {
+    display: none;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #666;
+    margin: 10px 0;
+}
+
+
+.job {
+    margin-bottom: 12px;
+}
+
+.job-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-weight: bold;
+}
+
+.job-company {
+    font-style: italic;
+    margin-bottom: 4px;
+}
+
+
+a {
+    color: #000;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+section {
+    margin-bottom: 15px;
+}
+
+
+@media (max-width: 768px) {
+
+    body {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .job-header {
+        flex-direction: column;
+        gap: 2px;
+    }
+}
