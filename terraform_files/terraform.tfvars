@@ -1,0 +1,1 @@
+bucket_name = "rose-devops-portfolio-12345"
