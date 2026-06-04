@@ -30,6 +30,10 @@ jobs:
         working-directory: terraform_files
         run: terraform init
 
+      - name: Terraform Apply
+        working-directory: terraform_files
+        run: terraform apply -auto-approve
+
       - name: Read Terraform Outputs
         working-directory: terraform_files
         run: |
