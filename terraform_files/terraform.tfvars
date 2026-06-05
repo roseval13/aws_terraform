@@ -1,1 +1,1 @@
-bucket_name = "rose-devops-portfolio-12345"
+bucket = "rose-devops-portfolio-${random_string.bucket.result}"

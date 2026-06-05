@@ -1,5 +1,11 @@
+resource "random_string" "bucket" {
+  length  = 6
+  special = false
+  upper   = false
+}
+
 resource "aws_s3_bucket" "website" {
-  bucket = var.bucket_name
+  bucket = "rose-devops-${random_string.bucket.result}"
 }
 
 resource "aws_s3_object" "website_files" {
