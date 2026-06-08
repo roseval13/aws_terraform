@@ -1,5 +1,6 @@
 resource "aws_s3_bucket" "website" {
-  bucket = "rose-devops-portfolio-12345"
+  bucket        = "rose-devops-portfolio-12345"
+  force_destroy = true
 
   tags = local.common_tags
 }
