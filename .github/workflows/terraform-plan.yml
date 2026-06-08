@@ -1,11 +1,26 @@
+name: Terraform Plan
+
 on:
   pull_request:
     paths:
-      - 'terraform_files/**'
+      - "terraform_files/**"
 
 jobs:
   plan:
-    ...
-    terraform init
-    terraform validate
-    terraform plan
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+
+      - name: Terraform Init
+        run: terraform init
+
+      - name: Terraform Validate
+        run: terraform validate
+
+      - name: Terraform Plan
+        run: terraform plan
