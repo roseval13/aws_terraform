@@ -30,6 +30,18 @@ jobs:
         working-directory: terraform_files
         run: terraform init
 
+      - name: Terraform Format Check
+        working-directory: terraform_files
+        run: terraform fmt -check
+
+      - name: Terraform Validate
+        working-directory: terraform_files
+        run: terraform validate
+
+      - name: Terraform Plan
+        working-directory: terraform_files
+        run: terraform plan
+
       - name: Terraform Apply
         working-directory: terraform_files
         run: terraform apply -auto-approve
