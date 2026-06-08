@@ -1,37 +1,24 @@
-resource "random_string" "bucket" {
-  length  = 6
-  special = false
-  upper   = false
-}
-
 resource "aws_s3_bucket" "website" {
-  bucket = "rose-devops-portfolio-${random_string.bucket.result}"
+  bucket = "rose-devops-portfolio-12345"
+
+  tags = local.common_tags
 }
 
-resource "aws_s3_object" "website_files" {
-  for_each = fileset("../website_code", "**")
-
+resource "aws_s3_bucket_versioning" "website" {
   bucket = aws_s3_bucket.website.id
 
-  key    = each.value
-  source = "../website_code/${each.value}"
+  versioning_configuration {
+    status = "Enabled"
+  }
+}
 
-  etag = filemd5("../website_code/${each.value}")
+resource "aws_s3_bucket_public_access_block" "website" {
+  bucket = aws_s3_bucket.website.id
 
-  content_type = lookup(
-    {
-      html = "text/html"
-      css  = "text/css"
-      js   = "application/javascript"
-      jpg  = "image/jpeg"
-      jpeg = "image/jpeg"
-      png  = "image/png"
-      svg  = "image/svg+xml"
-      pdf  = "application/pdf"
-    },
-    split(".", each.value)[length(split(".", each.value)) - 1],
-    "application/octet-stream"
-  )
+  block_public_acls       = true
+  block_public_policy     = true
+  ignore_public_acls      = true
+  restrict_public_buckets = true
 }
 
 resource "aws_s3_bucket_policy" "allow_cloudfront" {

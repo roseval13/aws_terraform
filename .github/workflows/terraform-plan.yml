@@ -1,0 +1,11 @@
+on:
+  pull_request:
+    paths:
+      - 'terraform_files/**'
+
+jobs:
+  plan:
+    ...
+    terraform init
+    terraform validate
+    terraform plan
