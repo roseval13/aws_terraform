@@ -5,7 +5,7 @@ resource "random_string" "bucket" {
 }
 
 resource "aws_s3_bucket" "website" {
-  bucket = "rose-devops-${random_string.bucket.result}"
+  bucket = "rose-devops-portfolio-${random_string.bucket.result}"
 }
 
 resource "aws_s3_object" "website_files" {

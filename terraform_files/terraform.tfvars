@@ -1,1 +1,0 @@
-bucket = "rose-devops-portfolio-${random_string.bucket.result}"
